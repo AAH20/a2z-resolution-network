@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-product-guide",
+  "version": "0.1.0",
+  "title": "Synthetic bilingual product guide",
+  "maintainer": "A2Z SOC",
+  "license": "Apache-2.0",
+  "evidence_class": "SYNTHETIC_ONLY",
+  "engine_source_commit": "5aa314fb1b2b24cb0a90d6b3a64d5af83b49c5c2"
+}

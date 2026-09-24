@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-09-24",
+  "modeled_costs_usd": {"per_case": "0.02", "per_escalation": "0.15"},
+  "cases": [
+    {
+      "ticket": {"id": "synthetic-en-guide", "locale": "en", "text": "Where can I find the product user guide?"},
+      "expected_decision": "answer", "expected_article_id": "en-product-guide", "declared_accepted": true
+    },
+    {
+      "ticket": {"id": "synthetic-ar-guide", "locale": "ar", "text": "فين دليل استخدام المنتج"},
+      "expected_decision": "answer", "expected_article_id": "ar-product-guide", "declared_accepted": true
+    },
+    {
+      "ticket": {"id": "synthetic-sensitive-account", "locale": "en", "text": "Can you reset my account password?"},
+      "expected_decision": "escalate", "expected_article_id": null, "declared_accepted": false
+    },
+    {
+      "ticket": {"id": "synthetic-retired-policy", "locale": "en", "text": "What is the retired return policy?"},
+      "expected_decision": "escalate", "expected_article_id": null, "declared_accepted": false
+    }
+  ]
+}

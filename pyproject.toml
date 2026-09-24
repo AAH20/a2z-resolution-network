@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "a2z-resolution-network"
+version = "0.1.0"
+description = "Inspectable, content-addressed bilingual support packs for A2Z Resolution Engine"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [{name = "A2Z SOC"}]
+dependencies = []
+
+[project.scripts]
+a2z-resolution-network = "resolution_network.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

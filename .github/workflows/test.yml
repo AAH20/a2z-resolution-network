@@ -1,0 +1,25 @@
+name: Test support pack
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/checkout@v4
+        with:
+          repository: AAH20/a2z-resolution-engine
+          ref: 5aa314fb1b2b24cb0a90d6b3a64d5af83b49c5c2
+          path: upstream-resolution
+          persist-credentials: false
+      - run: python -m pip install -e ./upstream-resolution -e .
+      - run: python -m unittest discover -s tests -v
+        env:
+          A2Z_ENGINE_SOURCE: upstream-resolution
+      - run: a2z-resolution-network build examples/guide-pack --engine-source upstream-resolution --output /tmp/guide.a2zpack
+      - run: a2z-resolution-network verify /tmp/guide.a2zpack
+      - run: a2z-resolution-network install /tmp/guide.a2zpack --registry /tmp/guide-registry
